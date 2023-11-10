@@ -56,7 +56,7 @@ traditional machine learning approach where the aim is to search over different 
 function. The graph that maximises the objective function is returned as the preferred graph.<br><br>
 Once the structure has been defined (i.e. nodes and links), a Bayesian network requires a probability distribution 
 to be assigned to each node. Parameter learning is the process of using data to learn the distributions of a 
-Bayesian network and it uses the maximum likelihood estimation procedure. <br><br><br>
+Bayesian network and it uses the maximum likelihood estimation procedure. <br><br><br> 
 Problem statement 1<br><br>
 Given the dataset. Identify the anomalies, find the feature causing the anomalous behavior and predict the 
 correct values for that feature. <br>
