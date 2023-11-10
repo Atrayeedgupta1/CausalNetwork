@@ -18,7 +18,7 @@ Example of a discrete network<br>
 A node can represent one variable or many variables and can be discrete, continuous and functional.<br>
 Here A, B and C are the discrete variables having two states each and the arrows represent direct dependencies. 
 The edges may or may not be causal. <br>
-The conditional probabilities for each of the variable are given <br>
+The conditional probabilities for each of the variable are given <br><br>
 P(A)<br>
 ![Screenshot 2023-11-03 211455](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/4e98e7c5-586d-4a14-b38b-286a5c91fbfd) <br>
 P(B|A,C) <br>
