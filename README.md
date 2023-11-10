@@ -3,7 +3,7 @@ Leveraged Bayesian networks to develop a sophisticated anomaly detection system.
 Inference with Bayesian Network and Causality
 
 Problem statement 1:
-Given a dataset. Identify the anomalies, find the feature causing the anomalous behavior and predict the correct values for that feature. 
+Given a dataset. Identify the anomalies, find the feature causing the anomalous behavior and predict the correct values for that feature. <br>
 Problem statement 2:
 There is an existing alarm tree. Simulate the same thing in a Bayesian network and find the root cause of a problem given certain evidence in particular nodes. 
 Problem statement 3:
