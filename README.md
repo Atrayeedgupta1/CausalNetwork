@@ -30,14 +30,23 @@ The Bayesian network represent the joint probability distribution of the domain 
 ![Screenshot 2023-11-03 235548](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/78829185-0955-46ba-bdee-244b7746c7b9) <br>
 
 Where Pa is the set containing the parents of X in the Bayesian network.
-The probability distribution for A is the prior belief when nothing else is known. <br>
+The probability distribution for A is the prior belief when nothing else is known. <br><br>
 Distribution for C is dependent on A and is calculated using this <br>
-P(C=State1) =P(C=State1|A=State1) P(A=State1) + P(C=State1|A=State2) P(A=State2) <br>
+P(C=State1) =P(C=State1|A=State1) P(A=State1) + P(C=State1|A=State2) P(A=State2) <br><br>
 Similarly, distribution on B is dependent on A and C both and is calculated using this <br>
 P(B=State1)= P(B=State1|A=State1,C=State1)P(A=State1)P(C=State1)+
  P(B=State1|A=State1,C=State2) P(A=State1)P(C=State2)+ 
  P(B=State1|A=State2,C=State1) P(A=State2)P(C=State1)+ 
- P(B=State1|A=State2,C=State2) P(A=State2)P(C=State2)
+ P(B=State1|A=State2,C=State2) P(A=State2)P(C=State2) <br><br>
+Linear Gaussian BNs are based on continuous variables which are assumed to follow Gaussian distributions.
+Hybrid BNs support both discrete and continuous distributions. It does not generally allow continuous variables 
+to be parents of discrete ones. Sometimes it is useful to discretize continuous data, generating a discrete variable, 
+where each state represents a continuous interval. <br><br>
+When a link does not exist between two nodes, this does not mean that they are completely independent, as 
+they may be connected via other nodes. They may however become dependent or independent depending on 
+the evidence that is set on other nodes. Evidence is the information we know about a variable. If we are 100% 
+certain about the information it is called the hard evidence otherwise it is called the soft evidence. <br><br>
+During inferences or predictions in the Bayesian network it uses the Bayes theorem which states that
 
 
 
