@@ -14,6 +14,18 @@ Preliminaries<br>
 Bayesian network: <br>
 A Bayesian network is a graphical representation of a probability distribution over a set of variables. It consists of two parts: the directed acyclic graph and a set of probability distributions one for each node conditioned on the parent. <br>
 Example of a discrete network<br>
-![Screenshot 2023-11-10 140047](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/8c111d24-4a19-4c14-a69a-f9861f716c1a)
+![Screenshot 2023-11-10 140047](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/8c111d24-4a19-4c14-a69a-f9861f716c1a) <br>
+A node can represent one variable or many variables and can be discrete, continuous and functional.<br>
+Here A, B and C are the discrete variables having two states each and the arrows represent direct dependencies. 
+The edges may or may not be causal. <br>
+The conditional probabilities for each of the variable are given <br>
+P(A)<br>
+![Screenshot 2023-11-03 211455](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/4e98e7c5-586d-4a14-b38b-286a5c91fbfd) <br>
+P(B|A,C) <br>
+![Screenshot 2023-11-03 211538](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/6a6345a4-412f-4d7b-b3fb-841e4d612afc) <br>
+P(C|A) <br>
+![Screenshot 2023-11-03 211747](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/66b3092c-6564-43f3-8ed7-ea66b51bb484) <br>
+
+
 
  
