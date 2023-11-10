@@ -26,6 +26,19 @@ P(B|A,C) <br>
 P(C|A) <br>
 ![Screenshot 2023-11-03 211747](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/66b3092c-6564-43f3-8ed7-ea66b51bb484) <br>
 
+The Bayesian network represent the joint probability distribution of the domain <br>
+![Screenshot 2023-11-03 235548](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/78829185-0955-46ba-bdee-244b7746c7b9) <br>
+
+Where Pa is the set containing the parents of X in the Bayesian network.
+The probability distribution for A is the prior belief when nothing else is known. <br>
+Distribution for C is dependent on A and is calculated using this <br>
+P(C=State1) =P(C=State1|A=State1) P(A=State1) + P(C=State1|A=State2) P(A=State2) <br>
+Similarly, distribution on B is dependent on A and C both and is calculated using this <br>
+P(B=State1)= P(B=State1|A=State1,C=State1)P(A=State1)P(C=State1)+
+ P(B=State1|A=State1,C=State2) P(A=State1)P(C=State2)+ 
+ P(B=State1|A=State2,C=State1) P(A=State2)P(C=State1)+ 
+ P(B=State1|A=State2,C=State2) P(A=State2)P(C=State2)
+
 
 
  
