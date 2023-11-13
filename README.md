@@ -105,6 +105,59 @@ of that anomaly. We can do this by testing the anomaly score without evidence se
 variables in the Bayesian network. Below is the retracted loglikelihood for each of the feature for all of the 
 observations in the test data.<br><br>
 ![Screenshot 2023-11-13 134558](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/21b7499a-fefc-4807-a67e-ed128ada02e2)
+![Screenshot 2023-11-13 134613](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/473b5ac4-3c5f-4925-8a52-edc4b74fd661)<br><br>
+Checking each observation at a time we conclude for each anomalous observation the variable giving the largest
+negative retracted loglikelihood i.e., the variable giving the most impact for the anomalous behavior of the 
+observation is<br><br>
+Point 1: mainsteamtemp_esv <br>
+Point 3: hpexhstpresr <br>
+Point 4: load <br>
+Point 5: hpexhstpresr <br>
+Point 9: coolnwateroutlttemp <br>
+
+Hence these are the most contributing factors for their anomalous behavior. If the retracted log likelihood is 
+around 0 then no other factors are there which contributes to their anomalous behavior otherwise there are 
+more factors.<br><br>
+For point 1, removing the effect of mainsteamtemp_esv we get mainsteampresr_esv having largest negative 
+retracted loglikelihood<br>
+![Screenshot 2023-11-13 134628](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/96253d29-f3b3-4e87-9c5a-311b60be564a)
+Removing the effect of mainsteamtemp_esv, mainsteampresr_esv we get hpexhsttemp having largest negative 
+retracted loglikelihood<br>
+![Screenshot 2023-11-13 134645](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/336e4357-fa8a-4677-a973-ee3aefca43cb)
+For Point 3, removing the effect of hpexhstpresr we get msflow having the largest negative retracted 
+loglikelihood,
+![Screenshot 2023-11-13 134701](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/c6e73a53-9d56-4889-bc7e-e0d3367ddb22)
+For Point 4, removing the effect of load we get coolnwateroutlttemp having the largest negative retracted 
+loglikelihood,
+![Screenshot 2023-11-13 134739](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/215130a0-57a4-4ca6-aa75-83c1dbc07d30)
+Removing the effect load, coolnwateroutlttemp we get mainsteampresr_esv having the largest negative 
+retracted loglikelihood
+![Screenshot 2023-11-13 134756](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/1878538e-e3fe-4e3e-b8ec-da48b7e6638b)
+Removing the effect load, coolnwateroutlttemp, mainsteampresr_esv we get msflow having the largest 
+negative retracted loglikelihood
+![Screenshot 2023-11-13 134808](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/56253ab1-aef0-45a7-a115-63aa7d731455)
+For Point 5, removing the effect of Hpexhstpresr we get mainsteamtemp_esv having the largest negative 
+retracted loglikelihood
+![Screenshot 2023-11-13 134854](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/98dae84e-96f3-480a-b31c-92d3b57e104b)
+For Point 9, removing the effect of coolnwateroutlttemp we get mainstreamtemp_esv 
+![Screenshot 2023-11-13 134909](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/d148358b-4e51-4bc7-b2b2-98d755395333)
+Removing the effect of coolnwateroutlttemp ,mainstreamtemp_esv we get msflow
+![Screenshot 2023-11-13 134919](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/fde3495f-90d8-4920-b1f7-85a1ad358980)
+<br><br>
+Therefore, the traced factors for all the observations in the test dataset are<br>
+![Screenshot 2023-11-13 134939](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/6dbec6fc-8f94-4cc0-b512-791417f7e12c) <br>
+Thus, we are successful in diagnosing the root cause of the problem as well. Our next aim is to predict the correct 
+values for these places.
+
+
+
+
+
+
+
+
+
+
 
 
 
