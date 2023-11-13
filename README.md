@@ -123,7 +123,7 @@ retracted loglikelihood<br>
 ![Screenshot 2023-11-13 134628](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/96253d29-f3b3-4e87-9c5a-311b60be564a)<br>
 Removing the effect of mainsteamtemp_esv, mainsteampresr_esv we get hpexhsttemp having largest negative 
 retracted loglikelihood<br>
-![Screenshot 2023-11-13 134645](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/336e4357-fa8a-4677-a973-ee3aefca43cb)br>
+![Screenshot 2023-11-13 134645](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/336e4357-fa8a-4677-a973-ee3aefca43cb)<br>
 For Point 3, removing the effect of hpexhstpresr we get msflow having the largest negative retracted 
 loglikelihood,
 ![Screenshot 2023-11-13 134701](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/c6e73a53-9d56-4889-bc7e-e0d3367ddb22)<br>
