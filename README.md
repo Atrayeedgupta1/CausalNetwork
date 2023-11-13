@@ -78,7 +78,9 @@ The model:<br><br>
 Variables having same values throughout is ignored since they do not depict uncertainty in its occurring. Search 
 and Score algorithm was used in Structural learning since it is sufficient to only consider correlation while doing 
 the task. While doing parameter learning Relevance tree algorithm was used. Hence, we get the model like this 
-where the arrows have no causal meaning.
+where the arrows have no causal meaning. <br><br>
+![Screenshot 2023-11-04 004930](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/7f4952b8-42f2-4f1a-8156-fca94070ef0f)
+
 
 
 
