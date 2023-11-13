@@ -1,6 +1,6 @@
 # Inference with Bayesian Network
 Problem statement 1:<br>
-Given a dataset. Identify the anomalies, find the feature causing the anomalous behavior and predict the correct values for that feature. <br>
+Given a dataset. Identify the anomalies, find the feature causing the anomalous behavior and predict the correct values for that feature. <br> 
 Problem statement 2:<br>
 There is an existing alarm tree. Simulate the same thing in a Bayesian network and find the root cause of a problem given certain evidence in particular nodes. <br>
 Problem statement 3:<br>
@@ -142,8 +142,7 @@ retracted loglikelihood
 For Point 9, removing the effect of coolnwateroutlttemp we get mainstreamtemp_esv 
 ![Screenshot 2023-11-13 134909](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/d148358b-4e51-4bc7-b2b2-98d755395333)1<br>
 Removing the effect of coolnwateroutlttemp ,mainstreamtemp_esv we get msflow
-![Screenshot 2023-11-13 134919](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/fde3495f-90d8-4920-b1f7-85a1ad358980)
-<br><br>
+![Screenshot 2023-11-13 134919](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/fde3495f-90d8-4920-b1f7-85a1ad358980)<br><br>
 Therefore, the traced factors for all the observations in the test dataset are<br>
 ![Screenshot 2023-11-13 134939](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/6dbec6fc-8f94-4cc0-b512-791417f7e12c) <br>
 Thus, we are successful in diagnosing the root cause of the problem as well. Our next aim is to predict the correct 
