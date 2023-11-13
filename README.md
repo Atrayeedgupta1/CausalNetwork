@@ -97,7 +97,16 @@ Bayesian network where the evidence from the test data is set.<br><br>
 So, if this is our test data<br>
 ![Screenshot 2023-11-04 014226](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/78d2f001-4638-4012-8ec9-b264c4b9fe06)<br><br>
 And we want to check which observations are anomalous we check the loglikelihood of each of the observations.<br>
-![Screenshot 2023-11-13 134337](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/ed59c431-d584-4a3f-b835-f2f763e713b8)
+![Screenshot 2023-11-13 134337](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/ed59c431-d584-4a3f-b835-f2f763e713b8) <br>
+Looking at this we can conclude that points 1,3,4,5,9 are anomalies.<br><br>
+Retracted Loglikelihood:<br>
+When the anomaly score detects anomalous behaviour, we are usually then interested in diagnosing the cause 
+of that anomaly. We can do this by testing the anomaly score without evidence set on a subset of particular 
+variables in the Bayesian network. Below is the retracted loglikelihood for each of the feature for all of the 
+observations in the test data.<br><br>
+![Screenshot 2023-11-13 134558](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/21b7499a-fefc-4807-a67e-ed128ada02e2)
+
+
 
 
 
