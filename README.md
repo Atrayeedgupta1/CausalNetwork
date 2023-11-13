@@ -159,7 +159,66 @@ Hence after prediction for each of the observations we get <br><br>
 When a Bayesian network has been built from data, it is common practice to evaluate the performance. Since 
 the variables are continuous, I used the metric R squared to understand how well the model is performing. R squared, also known as the Coefficient of determination is a standard metric which tells us how well 
 the inputs explain the variance of the output. Its value is between 0 and 1(the closer to 1 is better). For our final 
-model we got a good R-squared value.
+model we got a good R-squared value.<br><br><br>
+Problem statement 2<br><br>
+There is an existing alarm tree. Simulate the same thing in a Bayesian network and find the root cause of a 
+problem given certain evidence in particular nodes.<br>
+Fault detection and their diagnosis play an essential role in the industry. The search for signatures or 
+fault indicators has as a purpose to characterize the operation of the system by identifying the type 
+and origin of each of the failures. Various approaches developed for this purpose can be mainly divided 
+into two categories. The first is mathematical model based, such as multinomial logistic regression and 
+Bayesian networks. A fault tree is considered to simplify determining causality between components. 
+Any fault tree can be transformed into a corresponding Bayesian network by creating a binary Bayesian 
+network node for each event in the fault tree. The method of fault tree is widely used in the field of 
+the reliability. It offers a framework privileged to the deductive and inductive analysis by means of a 
+tree structure of logical gates. The procedure that uses fault trees for diagnosis purposes is abductive, 
+focusing first on adverse events and then identifying their causes. A fault tree is established as a logical 
+diagram and has the undesirable event at the top. The immediate causes that produce this event are 
+then hierarchized using logical symbols "AND" and "OR". To perform a correct diagnosis from the fault 
+trees, these must largely represent all the causal relationships of the system, capable of explaining all 
+possible fault scenarios.<br>
+The advantage of probabilistic graphical models is interesting graphical representation of models, easy 
+to understand and analyse. In addition, the probabilistic failure analysis evaluates the probability of 
+failure of a complex system that its weak points can be identified.<br>
+The tree has conditions and the final outcome or the leaf node. These leaf nodes describe what thing we have 
+to check when we get faulty results as inputs. For example, as the leaf nodes we have ‘CEP ineffective OR suction 
+trainer choked’, ‘CEP A motor overload protection’ etc.<br>
+We have two existing alarm trees one for Hotwell level high another one for Hotwell level low. We have to 
+combine them both to form a Bayesian network. It is converted to a Bayesian network so that we can do more 
+flexible and clean queries.<br><br>
+![Screenshot 2023-11-13 143814](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/b50d2295-75b4-4070-8d2b-6299cadabe85)<br><br>
+![Screenshot 2023-11-13 143823](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/84b28056-1313-4eb2-8069-b2f4eb36612f)<br><br>
+Building bayesian network from the fault tree is to transform the graphical representation of the fault 
+tree into bayesian network. Events and logic Gates (AND, OR) are the basic elements for the fault 
+tree. However, the bayesian network use as basic elements nodes that representing events and arcs 
+that model the dependences between events and relations causes – effect. <br><br>
+The final Bayesian network structure combining both the trees looks like this, here we have to specify the 
+probability distributions.<br>
+![Screenshot 2023-11-13 143845](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/5563f61b-2504-4eed-8a10-092160f253f3)br><br>
+The leaf nodes are the root causes and after setting the evidence we get out conclusions about the root nodes. 
+Hence like this we are able to diagnose the system.<br>
+Let’s check on one network to see how it functions<br>
+![Screenshot 2023-11-13 143903](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/a9f5aa27-5a2d-40f5-884d-a5f965173ebb)<br><br>
+The causal links are derived from the alarm tree and the conditional distribution tables acts as an OR gate. The 
+distribution on the leaf nodes is specified by the experts<br><br>
+Let’s say we have evidence about the given nodes<br>
+![Screenshot 2023-11-13 143918](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/6971eb17-987d-449b-ae69-e34d6ac2445f)<br>
+<br>
+It is clear from the model that the root cause is CEPbMtrOverloaded.<br>
+When we don’t have enough evidence and we cannot be very certain about a particular root cause we use the 
+Value of Information technique which helps us to know which other variables if known can reduce the 
+uncertainty of the root cause.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
