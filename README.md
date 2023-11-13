@@ -120,27 +120,27 @@ around 0 then no other factors are there which contributes to their anomalous be
 more factors.<br><br>
 For point 1, removing the effect of mainsteamtemp_esv we get mainsteampresr_esv having largest negative 
 retracted loglikelihood<br>
-![Screenshot 2023-11-13 134628](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/96253d29-f3b3-4e87-9c5a-311b60be564a)
+![Screenshot 2023-11-13 134628](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/96253d29-f3b3-4e87-9c5a-311b60be564a)<br>
 Removing the effect of mainsteamtemp_esv, mainsteampresr_esv we get hpexhsttemp having largest negative 
 retracted loglikelihood<br>
-![Screenshot 2023-11-13 134645](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/336e4357-fa8a-4677-a973-ee3aefca43cb)
+![Screenshot 2023-11-13 134645](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/336e4357-fa8a-4677-a973-ee3aefca43cb)br>
 For Point 3, removing the effect of hpexhstpresr we get msflow having the largest negative retracted 
 loglikelihood,
-![Screenshot 2023-11-13 134701](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/c6e73a53-9d56-4889-bc7e-e0d3367ddb22)
+![Screenshot 2023-11-13 134701](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/c6e73a53-9d56-4889-bc7e-e0d3367ddb22)<br>
 For Point 4, removing the effect of load we get coolnwateroutlttemp having the largest negative retracted 
 loglikelihood,
-![Screenshot 2023-11-13 134739](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/215130a0-57a4-4ca6-aa75-83c1dbc07d30)
+![Screenshot 2023-11-13 134739](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/215130a0-57a4-4ca6-aa75-83c1dbc07d30)<br>
 Removing the effect load, coolnwateroutlttemp we get mainsteampresr_esv having the largest negative 
 retracted loglikelihood
-![Screenshot 2023-11-13 134756](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/1878538e-e3fe-4e3e-b8ec-da48b7e6638b)
+![Screenshot 2023-11-13 134756](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/1878538e-e3fe-4e3e-b8ec-da48b7e6638b)<br>
 Removing the effect load, coolnwateroutlttemp, mainsteampresr_esv we get msflow having the largest 
 negative retracted loglikelihood
-![Screenshot 2023-11-13 134808](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/56253ab1-aef0-45a7-a115-63aa7d731455)
+![Screenshot 2023-11-13 134808](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/56253ab1-aef0-45a7-a115-63aa7d731455)<br>
 For Point 5, removing the effect of Hpexhstpresr we get mainsteamtemp_esv having the largest negative 
 retracted loglikelihood
-![Screenshot 2023-11-13 134854](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/98dae84e-96f3-480a-b31c-92d3b57e104b)
+![Screenshot 2023-11-13 134854](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/98dae84e-96f3-480a-b31c-92d3b57e104b)<br>
 For Point 9, removing the effect of coolnwateroutlttemp we get mainstreamtemp_esv 
-![Screenshot 2023-11-13 134909](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/d148358b-4e51-4bc7-b2b2-98d755395333)
+![Screenshot 2023-11-13 134909](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/d148358b-4e51-4bc7-b2b2-98d755395333)1<br>
 Removing the effect of coolnwateroutlttemp ,mainstreamtemp_esv we get msflow
 ![Screenshot 2023-11-13 134919](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/fde3495f-90d8-4920-b1f7-85a1ad358980)
 <br><br>
