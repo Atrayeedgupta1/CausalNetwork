@@ -146,7 +146,24 @@ Removing the effect of coolnwateroutlttemp ,mainstreamtemp_esv we get msflow
 Therefore, the traced factors for all the observations in the test dataset are<br>
 ![Screenshot 2023-11-13 134939](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/6dbec6fc-8f94-4cc0-b512-791417f7e12c) <br>
 Thus, we are successful in diagnosing the root cause of the problem as well. Our next aim is to predict the correct 
-values for these places.
+values for these places.<br><br>
+Prediction:<br>
+We use batch query method because it allows multiple cases to be queried at once. Prediction is the process of 
+calculating a probability distribution over one or more variables whose values we would like to know, given 
+information (evidence) we have about some other variables. The variables we are predicting are known 
+as Output variables, while the variables whose information we are using to make the predictions are known 
+as Input variables. In a Bayesian network any variable can be treated as an output, also any variable can be 
+treated as an input. <br>
+Hence after prediction for each of the observations we get <br><br>
+![Screenshot 2023-11-13 134954](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/0c3183dd-bd87-464a-b2f9-dee31732d4de) <br>
+When a Bayesian network has been built from data, it is common practice to evaluate the performance. Since 
+the variables are continuous, I used the metric R squared to understand how well the model is performing. Rsquared, also known as the Coefficient of determination is a standard metric which tells us how well 
+the inputs explain the variance of the output. Its value is between 0 and 1(the closer to 1 is better). For our final 
+model we got a good R-squared value.
+
+
+
+
 
 
 
