@@ -239,6 +239,130 @@ effect because we only observe one of the potential outcomes. For the time being
 easier than estimating the individual treatment effect. Instead, lets focus on the average treatment effect, which 
 is defined as follows.<br><br>
 ATE = E [Y1 -Y0] <br><br>
+Where Y1 is the output when the treatent is 1 and Y0 is the output when the treatment is 0.<br>
+Another easier quantity to estimate is the average treatment effect on the treated<br>
+ATT = E [Y1-Y0 | T=1] <br><br>
+Association is measured by E [Y|T=1] – E [Y|T=0]<br><br>
+Causation is measured by E [ Y1-Y0 ]<br>
+Where<br>
+E [Y|T=1] – E [Y|T=0] = E [Y1-Y0 | T=1] + { E [Y0|T=1] – E [Y0|T=0] }<br><br>
+Here the first term is the average treatment effect given treated and the second term represents the bias.<br>
+I.e., Bias = Affected not given treatment – unaffected not given treatment<br>
+The bias is given by how the treated and the control group differ before the treatment, in case neither of them 
+has received the treatment.<br>
+Two groups are comparable only if their effects are same when no treatment is given<br><br>
+Randomized Control Trials:<br>
+Now, we look at the first tool we have to make the bias vanish by randomised experiments. Randomised 
+experiments randomly assign individuals in a population to a treatment or to a control group. The proportion 
+that receives the treatment doesn’t have to be 50%. You could have an experiment where only 10% of your 
+samples get the treatment.<br><br>
+Intervention:<br>
+Overriding a variable is different to observing its behaviour. When we override, we call it an intervention. 
+Conditioning on T=t just means that we are restricting our focus to the subset of the population to those who 
+received treatment t. In contrast, an intervention would be to take the whole population and give everyone 
+treatment t.<br><br>![Screenshot 2023-11-14 153430](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/941e2ac9-4d32-432b-8ccf-8eacfc163030)<br><br>
+We denote intervention with the do operator do(T=t)<br><br>
+Conditional independence and d-separator:<br>
+In a chain junction, A -> B -> C controlling for B prevents information about A from getting to C or vice versa. <br>
+In a fork, A <- B -> C controlling for B prevents information about A from getting to C or vice versa.<br>
+In a collider, A ->B<-C exactly the opposite holds here. The variables start out independent but if you control for 
+B then information starts flowing.<br>
+Conditioning on descendants of a collider also induces association in between the parents of the collider. So,
+conditioning on the descendant is similar to conditioning on the collider itself. <br>
+So whenever two variables are conditionally independent that means that the path between them is ‘blocked’<br>
+The flow of association is symmetric, whereas the flow of causation is not. Causation only flows in a single 
+direction<br>
+Two set of nodes are called d-separated by a set of nodes Z if all the paths between X and Y are blocked by Z.<br><br>
+Backdoor criterion:<br>
+This is a method where we control for confounders to find the actual causal effect.<br>
+The nondirected unblocked paths from T to Y are known as backdoor paths. And it turns out that if we can block 
+these paths by adjusting (i.e., making it a constant value), we can identify causal quantities. I.e., close all backdoor 
+paths while leaving the front door paths.<br>
+
+A set of variables {Z} satisfies the backdoor criterion relative to an ordered pair of variables (Treatment(T) and 
+Outcome(Y) in a DAG if:<br>
+1. No node in {Z} is a descendant of T.<br>
+2. {Z} blocks every path between T and Y that contain an arrow into T (called the backdoor path)<br><br>
+Hence the causal effect of T on Y is <br>
+P(y |do(t)) = ∑P(y |t, w)P(w)<br><br>
+![Screenshot 2023-11-14 153440](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/eb06d91a-d52d-4385-978b-1b788f79488d)<br>
+If we don’t have data for the conditioning variables then this strategy won’t work.<br><br>
+Front door adjustment:<br>
+When we cannot collect data on the confounders, we cannot use the backdoor criterion. Instead, we use the 
+front door adjustment method. The steps to perform front door adjustment are<br>
+1. Identify the causal effect of T on M.<br>
+2. Identify the causal effect of M to Y<br>
+3. Combine the above steps to identify the causal effect of T on Y.<br><br>
+![Screenshot 2023-11-14 153451](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/32e5c93e-519e-4838-8635-517a89c0fb11)<br><br>
+Disjunctive cause criterion:<br>
+When we don’t have a causal model to make causal queries, we use this method.<br>
+Here we control for each covariate that is a cause of the exposure, or of the outcome, or both; exclude from this 
+set any variable known to be an instrumental variable and include as a covariate any proxy for an unobserved 
+variable that is a common cause of both the exposure and the outcome. <br><br>
+![Screenshot 2023-11-14 153501](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/fcd5d62f-bd7c-45d9-8093-eeda778fdf1c)<br><br>
+Building up a causal model:<br>
+There are some of the algorithms available which helps us to get graphs up to the Markov equivalent class. Here 
+we use PC algorithm which is a constraint-based method. To get accurate results with this algorithm we need a 
+large dataset.<br><br>
+Assumptions to make are<br>
+1. Faithfulness assumption<br>
+A graph is said to be faithful if the conditional independencies found in the data are reflected in the graph. i.e.,
+Two variables are independent implies they are d-separated.<br>
+2. Causal sufficiency <br>
+There are no unobserved confounders. i.e., no two variables share an unobserved common cause.<br><br>
+Markov equivalence class:<br>
+Two graphs are called Markov equivalent if and only if they have the same colliders and same skeleton.<br>
+PC algorithm helps us to find the Markov equivalence class using conditional independence tests. The most 
+common CI test for discrete variables is the chi squared test and for continuous variable it is the fisher’s z test.<br>
+Thus using the data we have, we use PC algorithm to get a structure like this.<br><br>
+![Screenshot 2023-11-14 153511](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/5fc0b11c-b3f0-40ad-9bcc-143205adae2e)<br><br>
+We further verify the network by expert opinion and by parameter learning we learn the corresponding 
+conditional probability tables. We can make causal queries using this model .A counterfactual is a hypothetical 
+or "what-if have happened if things would be different”.<br>
+Do-calculus offers no way of connecting the information across the different worlds thus we have to make use 
+of the characteristic variable and not just depend on the interventions<br>
+![Screenshot 2023-11-14 153527](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/3eb976e9-d77f-4528-9ae1-672afbda3855)<br><br>
+Consider an example to understand the counterfactual queries,<br>
+Suppose we have<br>
+![Screenshot 2023-11-14 161417](https://github.com/Atrayeedgupta1/CausalNetwork/assets/109009826/4aeb218c-9531-4bd7-883a-766d28376fdc)<br><br>
+We want to know under the same situation what would be my load if msflow was 500.<br><br>
+There are three steps to perform such query<br>
+1. Abduction – use the data about caseid 1 to estimate its idiosyncratic factors U1, U11, U12, U13, U14, 
+U15, U16 for this case.<br>
+2. Action - Use the do-operator to change the model to reflect the counterfactual assumption being 
+made, in this case that it has msflow 500<br>
+3. Prediction – Calculate this caseid’s new load using the modified model and the updated information 
+about the exogenous variables U1, U11, U12, U13, U14, U15, U16.<br><br>
+Like this we can get a lot of more information just by making queries from this causal network.<br><br><br>
+Conclusion<br><br>
+Thus, we emphasized the importance of Bayesian networks in various used cases. The incorporation 
+of prior knowledge and the dynamic adjustment of beliefs as new information surfaces equip 
+practitioners with a robust methodology for navigating uncertainty and making well informed 
+decisions.<br>
+As we reflect on the journey through the intricacies of Bayesian networks, it is clear that the 
+significance of this framework extends beyond a mere statistical tool. It is a gateway to unveiling 
+hidden patterns, understanding complex systems, and harnessing the power of probabilistic
+reasoning for enhanced decision making.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
