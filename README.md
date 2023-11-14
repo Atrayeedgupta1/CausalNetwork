@@ -207,7 +207,41 @@ Let’s say we have evidence about the given nodes<br>
 It is clear from the model that the root cause is CEPbMtrOverloaded.<br>
 When we don’t have enough evidence and we cannot be very certain about a particular root cause we use the 
 Value of Information technique which helps us to know which other variables if known can reduce the 
-uncertainty of the root cause.
+uncertainty of the root cause.<br><br><br>
+Problem statement 3<br>
+Create a Causal Bayesian network and make interventional and counterfactual queries to infer important 
+insights. <br><br>
+Correlation and causation:<br>
+Correlation/ association is the statistical dependency between two variables. Two types are positive correlation 
+and negative correlation and this is denoted by the Pearson’s correlation coefficient ‘r’. All of the machine 
+learning models that we use takes this into consideration, but it does not make the machine intelligent like 
+humans. <br>
+E.g. – Sleeping with our shoes has positive correlation with having head ache the next day, but this has no 
+meaning we cannot say that sleeping with shoes is a cause of the head ache.<br><br>
+Causation is when one affects the other. B happens only if A happens.<br>
+E.g. – I take medicine and I become healthy. Had I not taken the medicine I would have stayed sick. Thus, medicine 
+is the cause and healthy is the effect.<br><br>
+Confounder:<br>
+Confounder is the common cause of treatment and effect. In the first example that we considered drinking is the 
+common cause of both sleeping with shoes and having head ache the next day. This is the reason why we have 
+positive correlation between the two variables.<br>
+Thus, correlation is the mixture of confounding association and causal association. When we want to study about 
+the causal nature of the problem e have to remove the confounders. This can be done using several techniques 
+like the backdoor adjustment, front door adjustment etc. <br><br>
+Causal model:<br>
+This is the Bayesian model where all the edges represent cause and effect relationship.<br><br>
+Individual /Average treatment effect:<br>
+Potential outcomes are called potential because they didn’t actually happen. Instead, they denote what would 
+have happened in the case some treatment was taken.<br><br>
+Individual treatment effect = Y(A=1) – Y(A=0)<br><br>
+Of course, due to the fundamental problem of causal inference, we can never know the individual treatment 
+effect because we only observe one of the potential outcomes. For the time being, let’s focus on something 
+easier than estimating the individual treatment effect. Instead, lets focus on the average treatment effect, which 
+is defined as follows.<br><br>
+ATE = E [Y1 -Y0] <br><br>
+
+
+
 
 
 
