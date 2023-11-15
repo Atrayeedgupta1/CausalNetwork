@@ -1,4 +1,5 @@
 # Inference with Bayesian Network
+Note that all of the content here is present in the documentation file which is downloadable.<br><br>
 Problem statement 1:<br>
 Given a dataset. Identify the anomalies, find the feature causing the anomalous behavior and predict the correct values for that feature. <br> 
 Problem statement 2:<br>
